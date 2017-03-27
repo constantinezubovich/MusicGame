@@ -10,6 +10,11 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    
+    //https://itunes.apple.com/ru/rss/topsongs/genre=1157/json
+    //https://affiliate.itunes.apple.com/resources/documentation/genre-mapping/
+    //https://affiliate.itunes.apple.com/resources/documentation/itunes-store-web-service-search-api/#searching
+    
     var player: GameAudioPlayer?
     var recorder: GameAudioRecorder?
     
