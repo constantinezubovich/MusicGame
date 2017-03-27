@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="RgF-gm-JHY">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="EZ0-az-q9t">
+            <objects>
+                <viewController id="RgF-gm-JHY" customClass="ViewController" customModule="MusicGame" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="BeU-y5-sLN"/>
+                        <viewControllerLayoutGuide type="bottom" id="13v-qa-D3s"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="fHH-zD-RZI">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pBd-tZ-we3">
+                                <rect key="frame" x="139" y="471" width="96" height="96"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="96" id="QWl-sb-f8u"/>
+                                    <constraint firstAttribute="width" constant="96" id="yxk-aA-6Hy"/>
+                                </constraints>
+                                <state key="normal" image="micro"/>
+                                <connections>
+                                    <action selector="recordTapped:" destination="RgF-gm-JHY" eventType="touchDown" id="lXE-28-OIl"/>
+                                    <action selector="stopRecordingAction:" destination="RgF-gm-JHY" eventType="touchUpInside" id="EN6-O0-yDf"/>
+                                    <action selector="stopRecordingAction:" destination="RgF-gm-JHY" eventType="touchDragOutside" id="gC7-R3-ouh"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cPK-1X-oJx">
+                                <rect key="frame" x="139" y="40" width="96" height="96"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="96" id="Awg-K2-AXR"/>
+                                    <constraint firstAttribute="height" constant="96" id="LnD-St-Rt1"/>
+                                </constraints>
+                                <state key="normal" image="play"/>
+                                <connections>
+                                    <action selector="playTapped:" destination="RgF-gm-JHY" eventType="touchUpInside" id="i4O-N1-lXi"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7pe-be-hJI">
+                                <rect key="frame" x="146" y="179" width="83" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="83" id="GKI-on-csx"/>
+                                    <constraint firstAttribute="height" constant="30" id="wH5-Bs-hkS"/>
+                                </constraints>
+                                <state key="normal" title="reverse play"/>
+                                <connections>
+                                    <action selector="reversePlayTapped:" destination="RgF-gm-JHY" eventType="touchUpInside" id="TGt-bd-ydt"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="7pe-be-hJI" firstAttribute="top" secondItem="cPK-1X-oJx" secondAttribute="bottom" constant="43" id="2TX-lO-e7h"/>
+                            <constraint firstItem="13v-qa-D3s" firstAttribute="top" secondItem="pBd-tZ-we3" secondAttribute="bottom" constant="100" id="C1e-VP-fuT"/>
+                            <constraint firstItem="7pe-be-hJI" firstAttribute="centerX" secondItem="fHH-zD-RZI" secondAttribute="centerX" id="ceS-pu-vKM"/>
+                            <constraint firstItem="pBd-tZ-we3" firstAttribute="centerX" secondItem="fHH-zD-RZI" secondAttribute="centerX" id="ovC-03-VDa"/>
+                            <constraint firstItem="cPK-1X-oJx" firstAttribute="centerX" secondItem="fHH-zD-RZI" secondAttribute="centerX" id="rqK-UI-dhK"/>
+                            <constraint firstItem="cPK-1X-oJx" firstAttribute="top" secondItem="BeU-y5-sLN" secondAttribute="bottom" constant="20" id="xVW-2X-3e8"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VQY-hl-CdD" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="110" y="-1"/>
+        </scene>
+        <!--Test View Controller-->
+        <scene sceneID="BFi-IF-eEw">
+            <objects>
+                <viewController id="Bsl-C8-8KE" customClass="TestViewController" customModule="MusicGame" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="KpE-uy-wZz"/>
+                        <viewControllerLayoutGuide type="bottom" id="FyD-kG-SdR"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="RSW-fz-L8y">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wxg-N4-Q8I">
+                                <rect key="frame" x="251" y="106" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Draw"/>
+                                <connections>
+                                    <action selector="drawTapped:" destination="Bsl-C8-8KE" eventType="touchUpInside" id="grm-rV-EXW"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="LIn-Vu-xkb">
+                        <nil key="title"/>
+                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="x6I-jX-lbp">
+                            <rect key="frame" x="35" y="7" width="306" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <segments>
+                                <segment title="First"/>
+                                <segment title="Second"/>
+                            </segments>
+                        </segmentedControl>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vE2-29-i2w" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1871.2" y="-1.3493253373313345"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="1nc-iW-WEO">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="pKZ-ug-PWq" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Utg-cY-DQ1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Bsl-C8-8KE" kind="relationship" relationship="rootViewController" id="kWh-fk-b3X"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gTb-1k-Thw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="932" y="-1.3493253373313345"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="micro" width="96" height="96"/>
+        <image name="play" width="96" height="96"/>
+    </resources>
+</document>
