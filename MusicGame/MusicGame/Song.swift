@@ -49,4 +49,27 @@ extension Song {
         self.audioUrl = audioUrl
     }
     
+    init(searchJSON: JSONStandart) {
+        
+        self.id = 0
+        
+        guard let name = searchJSON["trackName"] as? String,
+            let artist = searchJSON["artistName"] as? String,
+            let imageUrl = searchJSON["artworkUrl30"] as? String,
+            let audioUrl = searchJSON["trackViewUrl"] as? String else {
+                
+                self.name = ""
+                self.artist = ""
+                self.imageUrl = ""
+                self.audioUrl = ""
+                return
+            }
+        
+        
+        self.name = name
+        self.artist = artist
+        self.imageUrl = imageUrl.resizedImageString()
+        self.audioUrl = audioUrl
+    }
+    
 }

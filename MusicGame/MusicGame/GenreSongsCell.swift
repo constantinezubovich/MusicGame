@@ -21,6 +21,12 @@ class GenreSongsCell: UICollectionViewCell {
         print("awakeFromNib")
         collectionView.dataSource = self
     }
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+        collectionView.reloadData()
+        genreLabel.text = nil
+    }
     
     func configure(viewModel: GenreSongsViewModel) {
         self.viewModel = viewModel

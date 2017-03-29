@@ -24,6 +24,10 @@ struct SongViewModel {
         return song.imageUrl
     }
     
+    var audioUrl: String {
+        return song.audioUrl
+    }
+    
     init(song: Song) {
         self.song = song
     }

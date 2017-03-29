@@ -11,12 +11,16 @@ import Foundation
 extension String {
     func resizedImageString() -> String {
         
-        let regexp = "[0-9]{2}x[0-9]{2}"
+        let regexp = "[0-9]{2}x[0-9]{2}bb"
         
         if let range = self.range(of:regexp, options: .regularExpression) {
-            return self.replacingCharacters(in: range, with: "200x200")
+            return self.replacingCharacters(in: range, with: "200x200bb")
         }
         
         return ""
+    }
+    
+    func stringWithSpecialCharactersChanging() -> String {
+        return self.replacingOccurrences(of: "&", with: "%26")
     }
 }

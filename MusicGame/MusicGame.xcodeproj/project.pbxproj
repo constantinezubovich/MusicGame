@@ -36,6 +36,12 @@
 		AD5FD4AC1E895A1E003993E9 /* Output.m in Sources */ = {isa = PBXBuildFile; fileRef = AD5FD4AB1E895A1E003993E9 /* Output.m */; };
 		AD5FD4AF1E895A4C003993E9 /* Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = AD5FD4AE1E895A4C003993E9 /* Utilities.m */; };
 		AD5FD4B11E895B7A003993E9 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5FD4B01E895B7A003993E9 /* TestViewController.swift */; };
+		ADA869F31E8BF43B00587641 /* SearchedSongCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA869F21E8BF43B00587641 /* SearchedSongCell.swift */; };
+		ADA869F51E8C092D00587641 /* SearchSongsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA869F41E8C092D00587641 /* SearchSongsViewModel.swift */; };
+		ADA869F71E8C0E9E00587641 /* SongsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA869F61E8C0E9E00587641 /* SongsRequest.swift */; };
+		ADA869F91E8C221D00587641 /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA869F81E8C221D00587641 /* ContainerViewController.swift */; };
+		ADA869FB1E8C226200587641 /* SongsContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA869FA1E8C226200587641 /* SongsContainerViewController.swift */; };
+		ADE856D11E8BEE6200A4172A /* SearchSongsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE856D01E8BEE6200A4172A /* SearchSongsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +80,12 @@
 		AD5FD4AD1E895A4C003993E9 /* Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utilities.h; sourceTree = "<group>"; };
 		AD5FD4AE1E895A4C003993E9 /* Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utilities.m; sourceTree = "<group>"; };
 		AD5FD4B01E895B7A003993E9 /* TestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
+		ADA869F21E8BF43B00587641 /* SearchedSongCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchedSongCell.swift; sourceTree = "<group>"; };
+		ADA869F41E8C092D00587641 /* SearchSongsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchSongsViewModel.swift; sourceTree = "<group>"; };
+		ADA869F61E8C0E9E00587641 /* SongsRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SongsRequest.swift; sourceTree = "<group>"; };
+		ADA869F81E8C221D00587641 /* ContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
+		ADA869FA1E8C226200587641 /* SongsContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SongsContainerViewController.swift; sourceTree = "<group>"; };
+		ADE856D01E8BEE6200A4172A /* SearchSongsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchSongsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				1DCEBD9B1E8ADBD6001067C3 /* GenresViewModel.swift */,
+				ADA869F41E8C092D00587641 /* SearchSongsViewModel.swift */,
 				1DCEBD9D1E8AE099001067C3 /* GenreSongsViewModel.swift */,
 				1D0048A01E8AEB8C00D13E08 /* SongViewModel.swift */,
 			);
@@ -151,7 +164,9 @@
 		1DCEBD991E8ADB71001067C3 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				ADA869FA1E8C226200587641 /* SongsContainerViewController.swift */,
 				1DCEBD901E8AC4A6001067C3 /* GenresViewController.swift */,
+				ADE856D01E8BEE6200A4172A /* SearchSongsViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -161,6 +176,7 @@
 			children = (
 				1DCEBD921E8ACB85001067C3 /* GenreSongsCell.swift */,
 				1D00489E1E8AEAE000D13E08 /* SongCell.swift */,
+				ADA869F21E8BF43B00587641 /* SearchedSongCell.swift */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -170,6 +186,7 @@
 			children = (
 				1DE2BD971E8AA534000BE29B /* NetworkDataFetcher+Songs.swift */,
 				1DE2BD991E8AA76B000BE29B /* TopSongsRequest.swift */,
+				ADA869F61E8C0E9E00587641 /* SongsRequest.swift */,
 			);
 			name = Songs;
 			sourceTree = "<group>";
@@ -200,6 +217,7 @@
 				AD5FD48E1E895895003993E9 /* AppDelegate.swift */,
 				AD5FD4901E895895003993E9 /* ViewController.swift */,
 				AD5FD4B01E895B7A003993E9 /* TestViewController.swift */,
+				ADA869F81E8C221D00587641 /* ContainerViewController.swift */,
 				1DCEBD8F1E8AC45A001067C3 /* iTunesSongs */,
 				AD5FD4A61E8959EB003993E9 /* MusicGame-Bridging-Header.h */,
 				AD5FD4921E895895003993E9 /* Main.storyboard */,
@@ -309,10 +327,12 @@
 			files = (
 				AD5FD4AC1E895A1E003993E9 /* Output.m in Sources */,
 				AD5FD4A41E8958F3003993E9 /* GameAudioRecorder.swift in Sources */,
+				ADA869FB1E8C226200587641 /* SongsContainerViewController.swift in Sources */,
 				AD5FD4B11E895B7A003993E9 /* TestViewController.swift in Sources */,
 				1DE2BD981E8AA534000BE29B /* NetworkDataFetcher+Songs.swift in Sources */,
 				1D0048A11E8AEB8C00D13E08 /* SongViewModel.swift in Sources */,
 				1DCEBD9C1E8ADBD6001067C3 /* GenresViewModel.swift in Sources */,
+				ADA869F31E8BF43B00587641 /* SearchedSongCell.swift in Sources */,
 				1DC535DD1E8A7BE500F676F3 /* RequestProtocol.swift in Sources */,
 				1D5E40501E8A806300D4A087 /* NetworkDataFetcher.swift in Sources */,
 				AD5FD4911E895895003993E9 /* ViewController.swift in Sources */,
@@ -321,15 +341,19 @@
 				1DC535D61E8A6D2C00F676F3 /* NetworkDataLoadable.swift in Sources */,
 				1DE2BD951E8A9F4E000BE29B /* Song.swift in Sources */,
 				AD5FD48F1E895895003993E9 /* AppDelegate.swift in Sources */,
+				ADA869F71E8C0E9E00587641 /* SongsRequest.swift in Sources */,
 				1DCEBD9E1E8AE099001067C3 /* GenreSongsViewModel.swift in Sources */,
 				1DCEBD8C1E8AB7A3001067C3 /* String+MG.swift in Sources */,
 				1DE2BD9A1E8AA76B000BE29B /* TopSongsRequest.swift in Sources */,
 				1D00489F1E8AEAE000D13E08 /* SongCell.swift in Sources */,
 				1DCEBD931E8ACB85001067C3 /* GenreSongsCell.swift in Sources */,
 				1DCEBD911E8AC4A6001067C3 /* GenresViewController.swift in Sources */,
+				ADA869F91E8C221D00587641 /* ContainerViewController.swift in Sources */,
+				ADA869F51E8C092D00587641 /* SearchSongsViewModel.swift in Sources */,
 				1D5E40531E8A838C00D4A087 /* NetworkDataFetcher+Genres.swift in Sources */,
 				1D00489D1E8AE7E900D13E08 /* UIImageView+MG.swift in Sources */,
 				AD5FD4AF1E895A4C003993E9 /* Utilities.m in Sources */,
+				ADE856D11E8BEE6200A4172A /* SearchSongsViewController.swift in Sources */,
 				AD5FD4A21E8958D2003993E9 /* GameAudioPlayer.swift in Sources */,
 				1DC535D91E8A713100F676F3 /* Genre.swift in Sources */,
 			);

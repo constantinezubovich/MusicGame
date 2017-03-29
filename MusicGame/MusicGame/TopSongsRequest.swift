@@ -21,7 +21,6 @@ struct TopSongsRequest: RequestProtocol{
         
         request = URLRequest(url: url)
         request?.httpMethod = "GET"
-        
     }
     
 }

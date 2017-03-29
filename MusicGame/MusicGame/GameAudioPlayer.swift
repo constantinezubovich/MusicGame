@@ -21,9 +21,18 @@ class GameAudioPlayer: NSObject {
         output = Output()
     }
     
+    init(urlString: String) {
+        url = URL(string: urlString)!
+        output = Output()
+    }
+    
     func play() {
         preparePlayer()
         player?.play()
+    }
+    
+    func stop() {
+        player?.stop()
     }
     
     func reversePlay() {
