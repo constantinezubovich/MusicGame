@@ -218,7 +218,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Song" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fRF-Un-nRF">
-                                                    <rect key="frame" x="16" y="8" width="343" height="15"/>
+                                                    <rect key="frame" x="16" y="8" width="323" height="15"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="15" id="MDQ-AZ-edQ"/>
                                                     </constraints>
@@ -227,25 +227,39 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Artist" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oSf-wN-1pQ">
-                                                    <rect key="frame" x="16" y="23" width="343" height="26.5"/>
+                                                    <rect key="frame" x="16" y="23" width="323" height="26.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BlD-fk-UlK">
+                                                    <rect key="frame" x="347" y="15" width="20" height="20"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="20" id="Nf6-kq-m6C"/>
+                                                        <constraint firstAttribute="height" constant="20" id="tpS-OP-YIm"/>
+                                                    </constraints>
+                                                    <state key="normal" image="play"/>
+                                                    <connections>
+                                                        <action selector="playButtonTapped:" destination="ZRT-Cp-l6x" eventType="touchUpInside" id="sbm-GH-6e6"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="oSf-wN-1pQ" firstAttribute="top" secondItem="fRF-Un-nRF" secondAttribute="bottom" id="1YV-bc-loH"/>
                                                 <constraint firstItem="fRF-Un-nRF" firstAttribute="leading" secondItem="FKj-DW-IVw" secondAttribute="leading" constant="16" id="2Fd-8a-nVx"/>
+                                                <constraint firstItem="BlD-fk-UlK" firstAttribute="leading" secondItem="fRF-Un-nRF" secondAttribute="trailing" constant="8" id="5wc-cv-G2K"/>
                                                 <constraint firstItem="fRF-Un-nRF" firstAttribute="top" secondItem="FKj-DW-IVw" secondAttribute="top" constant="8" id="Yec-pM-vih"/>
                                                 <constraint firstItem="oSf-wN-1pQ" firstAttribute="leading" secondItem="FKj-DW-IVw" secondAttribute="leading" constant="16" id="ZNY-uR-8Ew"/>
                                                 <constraint firstAttribute="bottom" secondItem="oSf-wN-1pQ" secondAttribute="bottom" id="cHB-ar-FbL"/>
-                                                <constraint firstAttribute="trailing" secondItem="oSf-wN-1pQ" secondAttribute="trailing" constant="16" id="mTy-21-YTL"/>
-                                                <constraint firstAttribute="trailing" secondItem="fRF-Un-nRF" secondAttribute="trailing" constant="16" id="nL6-Lg-VaQ"/>
+                                                <constraint firstItem="BlD-fk-UlK" firstAttribute="centerY" secondItem="FKj-DW-IVw" secondAttribute="centerY" id="gjZ-Z8-PZ1"/>
+                                                <constraint firstItem="BlD-fk-UlK" firstAttribute="leading" secondItem="oSf-wN-1pQ" secondAttribute="trailing" constant="8" id="jSp-bH-YEH"/>
+                                                <constraint firstAttribute="trailing" secondItem="BlD-fk-UlK" secondAttribute="trailing" constant="8" id="xJQ-Gh-oNw"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="artistLabel" destination="oSf-wN-1pQ" id="jUV-UQ-x07"/>
+                                            <outlet property="playButton" destination="BlD-fk-UlK" id="rv1-xv-58a"/>
                                             <outlet property="songLabel" destination="fRF-Un-nRF" id="eJ9-KH-g4d"/>
                                         </connections>
                                     </tableViewCell>
@@ -273,4 +287,7 @@
             <point key="canvasLocation" x="1800.8" y="-56.221889055472268"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="play" width="50" height="50"/>
+    </resources>
 </document>

@@ -14,6 +14,10 @@ class SearchedSongCell: UITableViewCell {
     
     @IBOutlet weak var songLabel: UILabel!
     @IBOutlet weak var artistLabel: UILabel!
+    @IBOutlet weak var playButton: UIButton!
+    
+    
+    var viewModel: SongViewModel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -21,8 +25,20 @@ class SearchedSongCell: UITableViewCell {
     }
 
     func configure(viewModel: SongViewModel) {
+        self.viewModel = viewModel
+        self.viewModel.delegate = self
         songLabel.text = viewModel.nameTitle
         artistLabel.text = viewModel.artistTitle
     }
     
+    @IBAction func playButtonTapped(_ sender: UIButton) {
+        sender.setImage(viewModel.playButtonImage, for: .normal)
+        viewModel.playButtonTapped()
+    }
+}
+
+extension SearchedSongCell: SongViewModelDelegate {
+    func updatePlayButton() {
+        self.playButton.setImage(viewModel.playButtonImage, for: .normal)
+    }
 }

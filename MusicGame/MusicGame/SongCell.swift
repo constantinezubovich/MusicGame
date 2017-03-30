@@ -12,7 +12,7 @@ class SongCell: UICollectionViewCell {
     
     static let reuseIdentifier: String = "SongCell"
     
-    var player: GameAudioPlayer?
+    
     
     @IBOutlet weak var songLabel: UILabel!
     @IBOutlet weak var artistLabel: UILabel!
@@ -31,8 +31,6 @@ class SongCell: UICollectionViewCell {
         
         songLabel.text = viewModel.nameTitle
         artistLabel.text = viewModel.artistTitle
-        
-        player = GameAudioPlayer(urlString: viewModel.audioUrl)
         
         imageView.loadImageUsingCacheWithUrlString(urlString: viewModel.imageUrl)
     }

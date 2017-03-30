@@ -7,29 +7,61 @@
 //
 
 import Foundation
+import UIKit
 
-struct SongViewModel {
+protocol SongViewModelDelegate: class {
+    func updatePlayButton()
+}
+
+class SongViewModel {
+    
+    weak var delegate:SongViewModelDelegate?
     
     private var song: Song
     
-    var nameTitle: String {
-        return song.name
-    }
+    var player: GameAudioPlayer?
+    
+    var isPlaying = false
+    
+    var nameTitle: String { return song.name }
 
-    var artistTitle: String {
-        return song.artist
+    var artistTitle: String { return song.artist }
+    
+    var imageUrl: String { return song.imageUrl }
+    
+    var audioUrl: String { return song.audioUrl }
+    
+    var playButtonImage: UIImage {
+        if isPlaying {
+            return #imageLiteral(resourceName: "play")
+        } else {
+            return #imageLiteral(resourceName: "stop")
+        }
     }
     
-    var imageUrl: String {
-        return song.imageUrl
-    }
-    
-    var audioUrl: String {
-        return song.audioUrl
-    }
     
     init(song: Song) {
         self.song = song
     }
     
+    func playButtonTapped() {
+        
+        if !isPlaying {
+            player = GameAudioPlayer(urlString: audioUrl)
+            player?.delegate = self
+            player?.play()
+        } else {
+            player?.stop()
+        }
+        
+        isPlaying = !isPlaying
+        
+    }
+    
+}
+
+extension SongViewModel: GameAudioPlayerDelegate {
+    func audioPlayerDidFinishPlaying() {
+        self.delegate?.updatePlayButton()
+    }
 }

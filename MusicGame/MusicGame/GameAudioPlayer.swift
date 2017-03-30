@@ -9,11 +9,17 @@
 import Foundation
 import AVFoundation
 
+protocol GameAudioPlayerDelegate: class {
+    func audioPlayerDidFinishPlaying()
+}
+
 class GameAudioPlayer: NSObject {
+    
+    weak var delegate: GameAudioPlayerDelegate? 
     
     fileprivate var player: AVAudioPlayer?
     fileprivate var reader : FileReader?
-    fileprivate var output : Output
+    fileprivate var output : Output?
     fileprivate var url: URL
     
     init(url: URL) {
@@ -23,7 +29,13 @@ class GameAudioPlayer: NSObject {
     
     init(urlString: String) {
         url = URL(string: urlString)!
-        output = Output()
+        do {
+            let data: Data = try Data(contentsOf: url)
+            player = try AVAudioPlayer(data: data)
+        } catch {
+            print(error)
+        }
+        
     }
     
     func play() {
@@ -37,7 +49,7 @@ class GameAudioPlayer: NSObject {
     
     func reversePlay() {
         prepareReversePlayer()
-        output.startUnit()
+        output?.startUnit()
     }
 }
 
@@ -45,6 +57,7 @@ extension GameAudioPlayer: AVAudioPlayerDelegate {
     
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
         print("audioPlayerDidFinishPlaying")
+        self.delegate?.audioPlayerDidFinishPlaying()
     }
     
     func audioPlayerDecodeErrorDidOccur(_ player: AVAudioPlayer, error: Error?) {
@@ -68,7 +81,7 @@ extension GameAudioPlayer: FileReaderDelegate {
     
     func audioFile(_ audioFile: FileReader!, updatedPosition framePosition: Int64) {
         if framePosition < 0 {
-            output.stopUnit()
+            output?.stopUnit()
         }
     }
     
@@ -77,15 +90,16 @@ extension GameAudioPlayer: FileReaderDelegate {
 private extension GameAudioPlayer {
     
     func preparePlayer() {
-        
-        do {
-            player = try AVAudioPlayer(contentsOf: url)
-            player?.delegate = self
-            player?.volume = 1.0
-        } catch {
-            print(error)
+        if player == nil {
+            do {
+                player = try AVAudioPlayer(contentsOf: url)
+            } catch {
+                print(error)
+            }
         }
         
+        player?.delegate = self
+        player?.volume = 1.0
     }
     
     func prepareReversePlayer() {
@@ -94,7 +108,7 @@ private extension GameAudioPlayer {
         }
         reader = FileReader(fileURL: url)
         reader?.delegate = self
-        output.outputDataSource = self
+        output?.outputDataSource = self
     }
     
 }

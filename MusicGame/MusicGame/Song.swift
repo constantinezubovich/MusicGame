@@ -56,7 +56,7 @@ extension Song {
         guard let name = searchJSON["trackName"] as? String,
             let artist = searchJSON["artistName"] as? String,
             let imageUrl = searchJSON["artworkUrl30"] as? String,
-            let audioUrl = searchJSON["trackViewUrl"] as? String else {
+            let audioUrl = searchJSON["previewUrl"] as? String else {
                 
                 self.name = ""
                 self.artist = ""
