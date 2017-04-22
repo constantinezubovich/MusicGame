@@ -11,12 +11,14 @@ import UIKit
 class SongCell: UICollectionViewCell {
     
     static let reuseIdentifier: String = "SongCell"
-    
-    
-    
+
     @IBOutlet weak var songLabel: UILabel!
     @IBOutlet weak var artistLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!
+    
+    let defaultSize = CGSize(width: 130, height: 175)
+    var defaultFrame: CGRect?
+    
     
     var viewModel: SongViewModel!
     override func prepareForReuse() {
@@ -24,15 +26,17 @@ class SongCell: UICollectionViewCell {
         songLabel.text = nil
         artistLabel.text = nil
         imageView.image = nil
+        defaultFrame = frame
     }
     
     func configure(viewModel: SongViewModel) {
         self.viewModel = viewModel
-        
+        defaultFrame = frame
         songLabel.text = viewModel.nameTitle
         artistLabel.text = viewModel.artistTitle
         
         imageView.loadImageUsingCacheWithUrlString(urlString: viewModel.imageUrl)
+        
     }
     
 }

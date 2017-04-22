@@ -29,11 +29,12 @@ class SearchedSongCell: UITableViewCell {
         self.viewModel.delegate = self
         songLabel.text = viewModel.nameTitle
         artistLabel.text = viewModel.artistTitle
+        playButton.setImage(viewModel.playButtonImage, for: .normal)
     }
     
     @IBAction func playButtonTapped(_ sender: UIButton) {
-        sender.setImage(viewModel.playButtonImage, for: .normal)
         viewModel.playButtonTapped()
+        sender.setImage(viewModel.playButtonImage, for: .normal)
     }
 }
 

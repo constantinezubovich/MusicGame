@@ -52,6 +52,8 @@ extension GenresViewController: UICollectionViewDataSource {
     
 }
 
+
+
 extension GenresViewController: GenresViewModelDelegate {
     func reloadViews() {
         DispatchQueue.main.async {

@@ -17,7 +17,6 @@ class ViewController: UIViewController {
     var player: GameAudioPlayer?
     var recorder: GameAudioRecorder?
     
-    
     let fileName = "audio.m4a"
     
     let urlString = "/Users/constantine/Documents/test.m4a"
@@ -25,10 +24,9 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         recorder = GameAudioRecorder(url: getFileUrl())
         player = GameAudioPlayer(url: getFileUrl())
-        
-       
         
         // Do any additional setup after loading the view, typically from a nib.
     }

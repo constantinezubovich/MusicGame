@@ -9,6 +9,11 @@
 import Foundation
 import AVFoundation
 
+extension Notification.Name {
+    public static let GameAudioPlayerWillChangeState: Notification.Name = Notification.Name("GameAudioPlayerWillChangeState")
+}
+
+
 protocol GameAudioPlayerDelegate: class {
     func audioPlayerDidFinishPlaying()
 }
@@ -24,6 +29,7 @@ class GameAudioPlayer: NSObject {
     
     init(url: URL) {
         self.url = url
+        
         output = Output()
     }
     

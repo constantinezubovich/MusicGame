@@ -19,8 +19,6 @@ class SongViewModel {
     
     private var song: Song
     
-    var player: GameAudioPlayer?
-    
     var isPlaying = false
     
     var nameTitle: String { return song.name }
@@ -32,30 +30,20 @@ class SongViewModel {
     var audioUrl: String { return song.audioUrl }
     
     var playButtonImage: UIImage {
-        if isPlaying {
-            return #imageLiteral(resourceName: "play")
-        } else {
+        if song.isPlaying {
             return #imageLiteral(resourceName: "stop")
+        } else {
+            return #imageLiteral(resourceName: "play")
         }
     }
-    
     
     init(song: Song) {
         self.song = song
     }
     
+    
     func playButtonTapped() {
-        
-        if !isPlaying {
-            player = GameAudioPlayer(urlString: audioUrl)
-            player?.delegate = self
-            player?.play()
-        } else {
-            player?.stop()
-        }
-        
-        isPlaying = !isPlaying
-        
+        NotificationCenter.default.post(name: .GameAudioPlayerWillChangeState, object: nil, userInfo:["song": song])
     }
     
 }

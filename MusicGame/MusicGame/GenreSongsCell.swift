@@ -20,6 +20,7 @@ class GenreSongsCell: UICollectionViewCell {
     override func awakeFromNib() {
         print("awakeFromNib")
         collectionView.dataSource = self
+        collectionView.delegate = self
     }
     override func prepareForReuse() {
         super.prepareForReuse()
@@ -55,6 +56,14 @@ extension GenreSongsCell: UICollectionViewDataSource {
     }
     
 }
+
+extension GenreSongsCell: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+
+    }
+}
+
 
 extension GenreSongsCell: GenresViewModelDelegate {
     func reloadViews() {

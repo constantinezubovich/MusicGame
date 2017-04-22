@@ -8,15 +8,13 @@
 
 import Foundation
 
-struct Song {
+class Song {
     let id: Int
     let name: String
     let artist: String
     let imageUrl: String
     let audioUrl: String
-}
-
-extension Song {
+    var isPlaying: Bool = false
     
     init(json: JSONStandart) {
         
@@ -30,7 +28,7 @@ extension Song {
             let imageArray = json["im:image"] as? [JSONStandart],
             let imageUrl = imageArray[0]["label"] as? String,
             let linkArray = json["link"] as? [JSONStandart],
-            let audioAttributes = linkArray[0]["attributes"] as? JSONStandart,
+            let audioAttributes = linkArray[1]["attributes"] as? JSONStandart,
             let audioUrl = audioAttributes["href"] as? String else {
                 
                 self.id = 0
@@ -39,7 +37,7 @@ extension Song {
                 self.imageUrl = ""
                 self.audioUrl = ""
                 return
-            }
+        }
         
         
         self.id = id
@@ -63,13 +61,12 @@ extension Song {
                 self.imageUrl = ""
                 self.audioUrl = ""
                 return
-            }
-        
+        }
         
         self.name = name
         self.artist = artist
         self.imageUrl = imageUrl.resizedImageString()
         self.audioUrl = audioUrl
     }
-    
 }
+
